@@ -27,7 +27,7 @@ public class TouristController {
 
     @GetMapping(path = "/delete/{name}")
     public ResponseEntity<Boolean> deleteTouristAttraction(@PathVariable("name") String name){
-        return new ResponseEntity<>(touristService.removeAttraction(name), HttpStatus.OK);
+        return new ResponseEntity<>(touristService.deleteAttraction(name), HttpStatus.OK);
     }
 
     @PostMapping(path = "/add")

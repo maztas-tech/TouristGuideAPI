@@ -24,7 +24,7 @@ public class TouristRepository {
         return touristAttraction;
     }
 
-    public boolean removeAttraction(String attractionName){
+    public boolean deleteAttraction(String attractionName){
         TouristAttraction found = null;
         for (TouristAttraction touristAttraction: touristAttractionArrayList){
             if (touristAttraction.getName().equalsIgnoreCase(attractionName)){
