@@ -14,4 +14,14 @@ public class TouristService {
     public List<TouristAttraction> getTouristAttractionArrayListService(){
         return touristRepository.getTouristAttractionArrayList();
     }
+
+    public boolean removeAttraction(String attractionName){
+        return touristRepository.removeAttraction(attractionName);
+    }
+
+    public TouristAttraction addAttraction(TouristAttraction touristAttraction){
+        return touristRepository.addAttraction(touristAttraction);
+    }
+
+
 }

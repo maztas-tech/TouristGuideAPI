@@ -24,20 +24,16 @@ public class TouristRepository {
         return touristAttraction;
     }
 
-    /*
-
-    public TouristAttraction removeAttraction(String attractionName){
-        for (TouristAttraction touristAttraction: getTouristAttractionArrayList()){
-            if (touristAttraction.getName().contains(attractionName)){
-                getTouristAttractionArrayList().remove(attractionName);
+    public boolean removeAttraction(String attractionName){
+        TouristAttraction found = null;
+        for (TouristAttraction touristAttraction: touristAttractionArrayList){
+            if (touristAttraction.getName().equalsIgnoreCase(attractionName)){
+                found = touristAttraction;
+            }
+            if (found != null){
+                return touristAttractionArrayList.remove(found);
             }
         }
-        return ;
+        return false;
     }
-    */
-
-
-
-
-
 }
