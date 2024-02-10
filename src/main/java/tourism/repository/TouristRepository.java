@@ -36,4 +36,33 @@ public class TouristRepository {
         }
         return false;
     }
+
+    public TouristAttraction changeAttraction(TouristAttraction touristAttraction, String updatedAttractionName, String updatedAttractionDescription){
+        TouristAttraction changed = null;
+        for (TouristAttraction touristAttractions: touristAttractionArrayList){
+            if (touristAttractions.getName().equalsIgnoreCase(touristAttraction.getName())){
+                changed = touristAttraction;
+            }
+            if (changed != null){
+                touristAttraction.setName(updatedAttractionName);
+                touristAttraction.setDescription(updatedAttractionDescription);
+
+                return changed;
+            }
+        }
+        return changed;
+    }
+
+    public TouristAttraction searchAttractions(String name){
+        TouristAttraction found = null;
+        for (TouristAttraction touristAttractions: getTouristAttractionArrayList()){
+            if (touristAttractions.getName().equalsIgnoreCase(name)){
+                found = touristAttractions;
+            }
+            if (found != null){
+                return found;
+            }
+        }
+        return found;
+    }
 }

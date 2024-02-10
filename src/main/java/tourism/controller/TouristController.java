@@ -36,6 +36,20 @@ public class TouristController {
         return new ResponseEntity<>(addTouristAttraction, HttpStatus.OK);
     }
 
+    @PostMapping(path = "/update")
+    public ResponseEntity<TouristAttraction> updateTouristAttraction(@RequestBody TouristAttraction touristAttractionName, String updatedAttractionName, String updatedAttractionDescription){
+        return new ResponseEntity<>(touristService.changeAttraction(touristAttractionName, updatedAttractionName, updatedAttractionDescription), HttpStatus.OK);
+    }
+
+    @GetMapping(path = "/search/{name}")
+    public ResponseEntity<TouristAttraction> searchTouristAttraction(@PathVariable String name){
+        return new ResponseEntity<>(touristService.searchAttractions(name), HttpStatus.OK);
+    }
+
+
+
+
+
 
 
 
